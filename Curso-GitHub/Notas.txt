@@ -5,3 +5,85 @@ git branch develop = crear una rama nueva llamada develop
 git checkout develop = cambiarnos a esa rama 
 
 git switch -c hotfix = crear y cambiar de rama 
+
+
+## 🔹 1. Fast-forward merge
+
+👉 **Solo “avanza el puntero”** de la rama principal porque no hay commits intermedios que la separen.
+
+```
+Antes:
+main:    A---B
+                \
+feature:         C---D
+
+Después (merge fast-forward):
+main:    A---B---C---D
+```
+
+* No crea commit de merge.
+* El historial se ve lineal, como si siempre hubieras trabajado en `main`.
+
+---
+
+## 🔹 2. Merge normal (3-way / recursive)
+
+👉 **Ambas ramas avanzaron**, Git necesita unirlas con un commit de merge.
+
+```
+Antes:
+main:    A---B---C
+                \
+feature:         D---E
+
+Después (merge normal):
+main:    A---B---C-------F
+                \       /
+feature:         D---E
+```
+
+* `F` es un **commit de merge** que une los cambios de `main` y `feature`.
+* Preserva la historia de ambas ramas.
+
+---
+
+## 🔹 3. Squash merge
+
+👉 Junta **todos los commits de la rama** en **uno solo** al integrarlos en `main`.
+
+```
+Antes:
+main:    A---B
+                \
+feature:         C---D---E
+
+Después (squash merge):
+main:    A---B-------F
+```
+
+* Aunque `feature` tenía 3 commits (`C, D, E`), en `main` solo aparece **un commit (`F`)**.
+* Historial más limpio, pero pierdes el detalle de lo que pasó dentro de la rama.
+
+---
+
+## 🔹 4. Rebase
+
+👉 En lugar de unir ramas, **“reaplica” los commits de tu rama encima de la otra**.
+
+```text
+Antes:
+main:    A---B---C
+                \
+feature:         D---E
+
+Después (rebase):
+main:    A---B---C---D'---E'
+```
+
+* Tus commits (`D, E`) se “reescriben” como nuevos (`D', E'`).
+* El historial queda **lineal**, como si hubieras trabajado siempre sobre `main`.
+---
+* **Fast-forward** → como si copiaras tus apuntes directamente en la libreta principal, sin marca extra.
+* **Merge normal** → pegas tus apuntes y firmas al final “este es un merge”.
+* **Squash** → haces un resumen de todos tus apuntes y lo anotas en una sola hoja.
+* **Rebase** → reescribes tus apuntes en la libreta principal como si siempre hubieran estado ahí.
