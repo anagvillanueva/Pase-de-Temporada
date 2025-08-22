@@ -1,0 +1,7 @@
+git branch = ver que ramas tengo 
+
+git branch develop = crear una rama nueva llamada develop 
+
+git checkout develop = cambiarnos a esa rama 
+
+git switch -c hotfix = crear y cambiar de rama 
