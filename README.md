@@ -12,8 +12,10 @@ Tener un espacio centralizado donde se guarden todos los ejercicios practicados,
 
 ## 💻 Tecnologías
 Dependiendo de los cursos, aquí encontrarás ejercicios en:
+- HTML / CSS / JavaScript
 - Python
 - Git y GitHub
+- Otros lenguajes o herramientas vistas en el evento
 
 ---
 

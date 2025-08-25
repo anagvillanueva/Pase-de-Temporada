@@ -67,6 +67,3 @@ print(10 in numbers) #False
 
 #Donde se encuentra un elemento en la tupla
 print(nombres.index("Marta")) #3, devuelve el índice del elemento 
-
-#Si el elemento no existe, lanza un ValueError
-#print(nombres.index("Pedro")) #ValueError: 'Pedro' is not in tuple
