@@ -70,4 +70,4 @@ print(f"El nombre completo es {nombre.upper()} {apellido.lower()}. Su edad es: {
 nombre_completo = f"{nombre} {apellido}"
 print(nombre_completo)
 
-print('El nombre es:', nombre, apellido, sep="_") 
+print('El nombre es:', nombre, apellido, sep="_") #El_nombre_es:_Diego_Lechuga
